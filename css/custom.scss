@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,500);
+
+// Variables
+// ------------------------------------
+$green1: #d0f05a;
+$blue: #80b5ce;
+$white: #ffffff;
+$black: #000000;
+$element-size: 400;
+
+// Skeleton breakpoints
+$bp-larger-than-mobile    : "min-width: 400px"  !default;
+$bp-larger-than-desktop   : "min-width: 1000px" !default;
+
+
+// Mixins
+// ------------------------------------
+@mixin transform ($transform...) {
+	-ms-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+
+// Functions
+// ------------------------------------
+@function rem-calc($px) {
+	$remValue: $px / 10;
+	@return #{$remValue}rem;
+}
+
+
+// Layout
+// ------------------------------------
+.body {
+	font-family: "Lato";
+	font-size: rem-calc(16);
+}
+
+.wrapper {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: rem-calc(30);
+	margin: rem-calc(200) 0;
+}
+
+.wrapper2 {
+	@extend .wrapper;
+	font-size: rem-calc(20);
+	margin-bottom: 0;
+}
+
+.one {
+	position: relative;
+	display: block;	
+	color: $white;
+	height: rem-calc($element-size);
+	width: rem-calc($element-size);
+	background: $blue;
+	margin: 0 auto;
+	@include transform(rotate(45deg));
+
+	span {
+		position: absolute;
+		display: inline-block;
+		top: rem-calc(200);
+		left: rem-calc(200);
+		@include transform(rotate(-45deg));
+	}
+
+	@media (#{$bp-larger-than-desktop}) {
+		display: inline-block;	
+		margin-right: rem-calc(-150);
+
+		span {
+			top: rem-calc(300);
+			left: rem-calc(50);
+		}
+	}
+}
+
+.two {
+	opacity: .8;
+	position: relative;
+	display: block;
+	color: $black;
+	height: rem-calc($element-size);
+	width: rem-calc($element-size);
+	background: $green1;
+	border-radius: 50%;
+	margin: 0 auto;
+
+	span {
+		position: absolute;
+		display: inline-block;
+		top: rem-calc(180);
+		right: rem-calc(160);
+	}
+
+	@media (#{$bp-larger-than-desktop}) {
+		display: inline-block;
+		text-align: right;
+
+		span {
+			right: rem-calc(30);
+		}
+	}
+}
+
+#inputField {
+	display: inline-block;
+	width: rem-calc(400);
+	margin: 0 auto;
+	border-top: none;
+	border-right: none; 
+	border-bottom: 2px solid grey; 
+	border-left: none;
+}
+
+#inputButton {
+	position: relative;
+	display: inline-block;
+	background: $blue;
+	height: rem-calc(20);
+	width: rem-calc(20);
+
+	&:after {
+		position: absolute;
+		color: white;
+		content: ">";
+		font-size: rem-calc(18);
+	}
+}

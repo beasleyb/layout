@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,500);
+.body {
+  font-family: "Lato";
+  font-size: 1.6rem;
+}
+
+.wrapper, .wrapper2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 20rem 0;
+}
+
+.wrapper2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.one {
+  position: relative;
+  display: block;
+  color: #ffffff;
+  height: 40rem;
+  width: 40rem;
+  background: #80b5ce;
+  margin: 0 auto;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.one span {
+  position: absolute;
+  display: inline-block;
+  top: 20rem;
+  left: 20rem;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media (min-width: 1000px) {
+  .one {
+    display: inline-block;
+    margin-right: -15rem;
+  }
+  .one span {
+    top: 30rem;
+    left: 5rem;
+  }
+}
+
+.two {
+  opacity: .8;
+  position: relative;
+  display: block;
+  color: #000000;
+  height: 40rem;
+  width: 40rem;
+  background: #d0f05a;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.two span {
+  position: absolute;
+  display: inline-block;
+  top: 18rem;
+  right: 16rem;
+}
+@media (min-width: 1000px) {
+  .two {
+    display: inline-block;
+    text-align: right;
+  }
+  .two span {
+    right: 3rem;
+  }
+}
+
+#inputField {
+  display: inline-block;
+  width: 40rem;
+  margin: 0 auto;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid grey;
+  border-left: none;
+}
+
+#inputButton {
+  position: relative;
+  display: inline-block;
+  background: #80b5ce;
+  height: 2rem;
+  width: 2rem;
+}
+#inputButton:after {
+  position: absolute;
+  color: white;
+  content: ">";
+  font-size: 1.8rem;
+}
